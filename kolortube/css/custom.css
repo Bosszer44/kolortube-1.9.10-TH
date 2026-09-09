@@ -630,22 +630,7 @@ body .wps-home-section:first-child {
 }
 
 
-.menu-footer-menu-container {
-    height: auto;
-    line-height: normal;
-}
-
-.site-footer .menu-footer-menu-container,
-.site-footer ul#menu-footer-menu,
-.site-footer ul#menu-footer-menu li {
-    display: block !important;
-    float: none !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 1.5 !important;
-    white-space: normal !important;
-}
+/* (footer reset consolidated into the canonical rule near the end of file) */
 
 .row.no-gutters {
     margin-right: 0;
@@ -2161,25 +2146,7 @@ body .wps-home-section:first-child {
         display: none;
     }
 
-    .menu-footer-menu-container {
-        height: auto;
-        line-height: normal;
-    }
-
-    .menu-footer-menu-container ul {
-        margin-bottom: 0;
-    }
-
-    .menu-footer-menu-container ul#menu-footer-menu,
-    .menu-footer-menu-container ul#menu-footer-menu li {
-        display: block !important;
-        float: none !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        line-height: 1.5 !important;
-        white-space: normal !important;
-    }
+    /* (footer reset consolidated into the canonical rule near the end of file) */
 
     .site-info {
         line-height: 32px;
@@ -2749,9 +2716,7 @@ html body.wps-header-split-on #wrapper-navbar {
     box-shadow: 0 6px 14px rgba(255, 0, 102, 0.25);
 } 
 
-.footer-menu ul{
-list-style:none;
-}
+/* (footer list reset consolidated into the canonical rule near the end of file) */
 
 footer ul{
 list-style:none;
@@ -7576,152 +7541,8 @@ html body.single-post .single-video-infos .video-gallery .gallery-title {
     }
 }
 
-/* ==========================================================
- * Footer navigation: compact horizontal layout
- * Keep footer links left-to-right instead of stacking vertically.
- * ========================================================== */
-.site-footer .footer-menu-container,
-.site-footer .menu-footer-menu-container {
-    width: 100%;
-    margin: 18px auto 12px;
-    overflow: visible;
-}
-
-.site-footer .footer-menu-container > ul,
-.site-footer .menu-footer-menu-container > ul,
-.site-footer ul#menu-footer-menu {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px 18px !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    list-style: none !important;
-    float: none !important;
-}
-
-.site-footer .footer-menu-container > ul > li,
-.site-footer .menu-footer-menu-container > ul > li,
-.site-footer ul#menu-footer-menu > li {
-    display: block !important;
-    flex: 0 0 auto !important;
-    width: auto !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-    line-height: 1.35 !important;
-    white-space: nowrap !important;
-}
-
-.site-footer .footer-menu-container > ul > li > a,
-.site-footer .menu-footer-menu-container > ul > li > a,
-.site-footer ul#menu-footer-menu > li > a {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    width: auto !important;
-    min-height: 32px;
-    padding: 5px 2px !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
-    text-decoration: none;
-}
-
-/* Do not allow old mobile rules to force the footer menu vertical. */
-@media (max-width: 767.98px) {
-    .site-footer .footer-menu-container,
-    .site-footer .menu-footer-menu-container {
-        margin: 14px auto 10px;
-    }
-
-    .site-footer .footer-menu-container > ul,
-    .site-footer .menu-footer-menu-container > ul,
-    .site-footer ul#menu-footer-menu {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 5px 14px !important;
-    }
-
-    .site-footer .footer-menu-container > ul > li,
-    .site-footer .menu-footer-menu-container > ul > li,
-    .site-footer ul#menu-footer-menu > li {
-        width: auto !important;
-        max-width: none !important;
-        flex: 0 0 auto !important;
-        white-space: nowrap !important;
-    }
-
-    .site-footer .footer-menu-container > ul > li > a,
-    .site-footer .menu-footer-menu-container > ul > li > a,
-    .site-footer ul#menu-footer-menu > li > a {
-        width: auto !important;
-        white-space: nowrap !important;
-        min-height: 30px;
-        padding: 4px 2px !important;
-    }
-}
-
-
-/* ==========================================================
- * FINAL FOOTER MENU OVERRIDE
- * Explicit class prevents legacy/theme rules from stacking
- * footer links vertically.  Menu is horizontal and wraps only
- * when the available width is insufficient.
- * ========================================================== */
-.site-footer ul.footer-menu-list {
-    display: flex !important;
-    flex-flow: row wrap !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 6px 16px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    list-style: none !important;
-    float: none !important;
-}
-
-.site-footer ul.footer-menu-list > li {
-    display: inline-flex !important;
-    flex: 0 0 auto !important;
-    width: auto !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-    line-height: 1.2 !important;
-    white-space: nowrap !important;
-}
-
-.site-footer ul.footer-menu-list > li > a {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 4px 0 !important;
-    white-space: nowrap !important;
-    text-decoration: none !important;
-}
-
-@media (max-width: 767.98px) {
-    .site-footer ul.footer-menu-list {
-        justify-content: center !important;
-        gap: 5px 12px !important;
-    }
-
-    .site-footer ul.footer-menu-list > li > a {
-        padding: 3px 0 !important;
-    }
-}
+/* (footer draft blocks removed — the single canonical footer-menu rule
+   near the end of this file is the only standard) */
 
 
 /* ==========================================================
@@ -7858,122 +7679,9 @@ html body.single-post .single-video-infos .video-description li {
     }
 }
 
-/* ==========================================================
- * FOOTER — FLEX WRAP, NEVER OVERLAP
- * Fill each row from left to right, then wrap naturally.
- * ========================================================== */
-html body #wrapper-footer .site-footer .footer-menu-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 12px auto 10px !important;
-    overflow: visible !important;
-}
-
-html body #wrapper-footer .site-footer ul.footer-menu-list {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    justify-content: center !important;
-    align-content: center !important;
-    column-gap: 18px !important;
-    row-gap: 4px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    list-style: none !important;
-    float: none !important;
-    position: static !important;
-}
-
-html body #wrapper-footer .site-footer ul.footer-menu-list > li,
-html body #wrapper-footer .site-footer ul.footer-menu-list > li.menu-item {
-    display: inline-flex !important;
-    flex: 0 0 auto !important;
-    width: auto !important;
-    max-width: none !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-    position: static !important;
-    line-height: 1.35 !important;
-    white-space: nowrap !important;
-    box-sizing: border-box !important;
-}
-
-html body #wrapper-footer .site-footer ul.footer-menu-list > li > a,
-html body #wrapper-footer .site-footer ul.footer-menu-list > li.menu-item > a {
-    display: inline-flex !important;
-    position: static !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;
-    max-width: none !important;
-    height: auto !important;
-    min-height: 30px !important;
-    margin: 0 !important;
-    padding: 4px 0 !important;
-    float: none !important;
-    line-height: 1.35 !important;
-    white-space: nowrap !important;
-    word-break: normal !important;
-    overflow: visible !important;
-    transform: none !important;
-    box-sizing: border-box !important;
-}
-
-html body #wrapper-footer .site-footer ul.footer-menu-list > li > ul {
-    display: none !important;
-}
-
-html body #wrapper-footer .site-footer .site-info {
-    position: static !important;
-    clear: both !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 10px auto 0 !important;
-    padding: 7px 8px !important;
-    box-sizing: border-box !important;
-    text-align: center !important;
-    line-height: 1.45 !important;
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-}
-
-@media (max-width: 767.98px) {
-    html body #wrapper-footer .site-footer ul.footer-menu-list {
-        justify-content: flex-start !important;
-        column-gap: 14px !important;
-        row-gap: 3px !important;
-    }
-
-    html body #wrapper-footer .site-footer ul.footer-menu-list > li > a {
-        min-height: 28px !important;
-        padding: 3px 0 !important;
-        font-size: 12px !important;
-    }
-
-    html body #wrapper-footer .site-footer .site-info {
-        margin-top: 9px !important;
-        padding: 6px 4px !important;
-        font-size: 12px !important;
-    }
-}
-
-@media (max-width: 360px) {
-    html body #wrapper-footer .site-footer ul.footer-menu-list {
-        column-gap: 11px !important;
-    }
-
-    html body #wrapper-footer .site-footer ul.footer-menu-list > li > a {
-        font-size: 11px !important;
-    }
-}
+/* (footer draft blocks removed — the single canonical footer-menu rule
+   "FOOTER MENU (STANDARD): horizontal left-to-right, centered" below
+   is the only standard) */
 
 /* Keep the footer on the same visible background as the rest of the site. */
 html body #wrapper-footer,
@@ -7982,9 +7690,14 @@ html body #wrapper-footer .site-footer .site-info {
     background: transparent !important;
 }
 
-/* Footer menu: horizontal left-to-right, centered (single item stays centered). */
+/* ==========================================================
+ * FOOTER MENU (STANDARD — ค่าเดียวมาตรฐาน)
+ * เรียงซ้าย → ขวา + จัดกลาง (มีแค่อันเดียวก็อยู่กลาง)
+ * ========================================================== */
 html body #wrapper-footer .site-footer .footer-menu-container > ul,
+html body #wrapper-footer .site-footer .footer-menu-container > div > ul,
 html body #wrapper-footer .site-footer .menu-footer-menu-container > ul,
+html body #wrapper-footer .site-footer .menu-footer-menu-container > div > ul,
 html body #wrapper-footer .site-footer ul.footer-menu-list,
 html body #wrapper-footer .site-footer ul#menu-footer-menu {
     display: flex !important;
@@ -7999,7 +7712,9 @@ html body #wrapper-footer .site-footer ul#menu-footer-menu {
 }
 
 html body #wrapper-footer .site-footer .footer-menu-container > ul > li,
+html body #wrapper-footer .site-footer .footer-menu-container > div > ul > li,
 html body #wrapper-footer .site-footer .menu-footer-menu-container > ul > li,
+html body #wrapper-footer .site-footer .menu-footer-menu-container > div > ul > li,
 html body #wrapper-footer .site-footer ul.footer-menu-list > li,
 html body #wrapper-footer .site-footer ul#menu-footer-menu > li {
     display: inline-flex !important;
@@ -8014,7 +7729,9 @@ html body #wrapper-footer .site-footer ul#menu-footer-menu > li {
 }
 
 html body #wrapper-footer .site-footer .footer-menu-container > ul > li > a,
+html body #wrapper-footer .site-footer .footer-menu-container > div > ul > li > a,
 html body #wrapper-footer .site-footer .menu-footer-menu-container > ul > li > a,
+html body #wrapper-footer .site-footer .menu-footer-menu-container > div > ul > li > a,
 html body #wrapper-footer .site-footer ul.footer-menu-list > li > a,
 html body #wrapper-footer .site-footer ul#menu-footer-menu > li > a {
     display: inline-flex !important;
@@ -8027,7 +7744,9 @@ html body #wrapper-footer .site-footer ul#menu-footer-menu > li > a {
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     html body #wrapper-footer .site-footer .footer-menu-container > ul,
+    html body #wrapper-footer .site-footer .footer-menu-container > div > ul,
     html body #wrapper-footer .site-footer .menu-footer-menu-container > ul,
+    html body #wrapper-footer .site-footer .menu-footer-menu-container > div > ul,
     html body #wrapper-footer .site-footer ul.footer-menu-list,
     html body #wrapper-footer .site-footer ul#menu-footer-menu {
         justify-content: center !important;
@@ -8036,7 +7755,9 @@ html body #wrapper-footer .site-footer ul#menu-footer-menu > li > a {
 
 @media (max-width: 767.98px) {
     html body #wrapper-footer .site-footer .footer-menu-container > ul,
+    html body #wrapper-footer .site-footer .footer-menu-container > div > ul,
     html body #wrapper-footer .site-footer .menu-footer-menu-container > ul,
+    html body #wrapper-footer .site-footer .menu-footer-menu-container > div > ul,
     html body #wrapper-footer .site-footer ul.footer-menu-list,
     html body #wrapper-footer .site-footer ul#menu-footer-menu {
         justify-content: center !important;
@@ -8327,20 +8048,5 @@ body .wps-home-section:first-child {
     text-align: left !important;
 }
 
-/* 1.4 Footer menu: one horizontal left-to-right row. */
-.site-footer .footer-menu ul,
-.site-footer .menu {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    padding: 0 !important;
-    margin: 0 auto 12px !important;
-    list-style: none !important;
-}
-
-.site-footer .footer-menu ul li,
-.site-footer .menu li {
-    margin: 4px 20px 8px 0 !important;
-}
+/* 1.4 (removed: conflicting left-aligned footer-menu draft —
+   the single FOOTER MENU (STANDARD) rule above is the standard) */
