@@ -7982,41 +7982,46 @@ html body #wrapper-footer .site-footer .site-info {
     background: transparent !important;
 }
 
-/* Footer menu columns: fill each row from left to right before wrapping. */
+/* Footer menu: horizontal left-to-right, centered (single item stays centered). */
 html body #wrapper-footer .site-footer .footer-menu-container > ul,
 html body #wrapper-footer .site-footer .menu-footer-menu-container > ul,
 html body #wrapper-footer .site-footer ul.footer-menu-list,
 html body #wrapper-footer .site-footer ul#menu-footer-menu {
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    grid-auto-flow: row !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
     gap: 4px 18px !important;
     align-items: center !important;
-    justify-items: start !important;
-    justify-content: stretch !important;
-    text-align: left !important;
+    align-content: center !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    text-align: center !important;
 }
 
 html body #wrapper-footer .site-footer .footer-menu-container > ul > li,
 html body #wrapper-footer .site-footer .menu-footer-menu-container > ul > li,
 html body #wrapper-footer .site-footer ul.footer-menu-list > li,
 html body #wrapper-footer .site-footer ul#menu-footer-menu > li {
-    display: block !important;
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
     width: auto !important;
     min-width: 0 !important;
     max-width: none !important;
-    justify-self: stretch !important;
-    text-align: left !important;
+    justify-self: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
 }
 
 html body #wrapper-footer .site-footer .footer-menu-container > ul > li > a,
 html body #wrapper-footer .site-footer .menu-footer-menu-container > ul > li > a,
 html body #wrapper-footer .site-footer ul.footer-menu-list > li > a,
 html body #wrapper-footer .site-footer ul#menu-footer-menu > li > a {
-    display: flex !important;
-    justify-content: flex-start !important;
-    width: 100% !important;
-    text-align: left !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    text-align: center !important;
     white-space: nowrap !important;
 }
 
@@ -8025,7 +8030,7 @@ html body #wrapper-footer .site-footer ul#menu-footer-menu > li > a {
     html body #wrapper-footer .site-footer .menu-footer-menu-container > ul,
     html body #wrapper-footer .site-footer ul.footer-menu-list,
     html body #wrapper-footer .site-footer ul#menu-footer-menu {
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        justify-content: center !important;
     }
 }
 
@@ -8034,7 +8039,7 @@ html body #wrapper-footer .site-footer ul#menu-footer-menu > li > a {
     html body #wrapper-footer .site-footer .menu-footer-menu-container > ul,
     html body #wrapper-footer .site-footer ul.footer-menu-list,
     html body #wrapper-footer .site-footer ul#menu-footer-menu {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        justify-content: center !important;
         column-gap: 14px !important;
     }
 }
