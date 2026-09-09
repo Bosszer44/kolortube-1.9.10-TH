@@ -1,0 +1,13 @@
+/*
+Theme Name: KolorTube
+Theme URI: https://www.wp-script.com/adult-wordpress-themes/kolortube/
+Author: WP-Script
+Author URI: https://www.wp-script.com
+Description: KolorTube 1.9.10 Pink Theme — iPad layout fix (no 100vw overflow), header gap fix, left-to-right footer menu, pink gradient labels/capsule buttons registered in Customizer, like button writes via theme WP-Script core AJAX.
+Version: 1.9.10
+Requires at least: 6.0
+Requires PHP: 8.0
+Text Domain: wpst
+*/
+
+/* CSS is centralized in the theme custom stylesheet and customizer output. */

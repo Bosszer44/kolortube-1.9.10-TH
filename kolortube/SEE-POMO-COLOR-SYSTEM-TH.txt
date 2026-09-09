@@ -1,0 +1,19 @@
+SEE-POMO Color System
+
+หลักการ
+- โครงสร้าง การ์ด มุมโค้ง เงา Hover Slider Gallery เมนูมือถือ และ Player อยู่ใน css/custom.css ของธีม
+- ชุดสีเปลี่ยนเฉพาะตัวแปร --see-pomo-main, --see-pomo-link, --see-pomo-accent, --see-pomo-surface และ --see-pomo-text
+- เมนู ฟังก์ชัน Hook Template และ JavaScript เดิมไม่ได้ถูกลบหรือเปลี่ยน
+- Custom CSS เดิมของเว็บยังคงอยู่ แต่เมื่อยืนยันหน้าตาใหม่แล้วสามารถลบเฉพาะกฎสี/เงาที่ซ้ำออกได้
+
+วิธีเลือกสี
+Appearance > Customize > Colors > Theme Color Preset
+
+Use current colors
+- ใช้ Main Color และ Link Color ปัจจุบัน
+- โครงสร้างและเอฟเฟกต์ SEE-POMO ยังคงทำงาน
+
+Responsive
+- Desktop: Hover และเงาทำงาน
+- Tablet: ลด gap และ padding
+- Mobile: ปิดการขยาย Hover, ใช้เมนูตามสีธีม และรูปไม่ล้น

@@ -1,0 +1,257 @@
+/**
+ * BossMaster Floating Banner Display Only 1.0.1
+ * Scope: floating-banner position, responsive size, stacking and close controls.
+ * This file intentionally does not style post content, menus, colors or ad data.
+ */
+
+/* Reference rule: stop floating media from widening the post viewport. */
+html {
+    overflow-x: clip !important;
+}
+
+body.bmfb-floating-banner-display-active {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: clip !important;
+}
+
+/* Reference rule: keep the theme header and open menus above floating ads. */
+.bmfb-floating-banner-display-active #wrapper-navbar,
+.bmfb-floating-banner-display-active #wrapper-navbar .navbar-collapse,
+.bmfb-floating-banner-display-active #wrapper-navbar .dropdown-menu {
+    z-index: 2147483647 !important;
+}
+
+.bmfb-floating-banner-display-active #wrapper-navbar {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    overflow: visible !important;
+}
+
+.bmfb-floating-banner-display-active #wrapper-navbar .navbar,
+.bmfb-floating-banner-display-active #wrapper-navbar .nav-container,
+.bmfb-floating-banner-display-active #wrapper-navbar .navbar-nav,
+.bmfb-floating-banner-display-active #wrapper-navbar .dropdown {
+    overflow: visible !important;
+}
+
+/* Undo a page-level stacking context that can trap fixed banners under content. */
+.bmfb-floating-banner-display-active .wps-single-floating-ad-scope {
+    display: contents !important;
+    position: static !important;
+    z-index: auto !important;
+    isolation: auto !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* Current KOLORTUBE / AV Framework floating-ad markup. */
+.bmfb-floating-banner-display-active .wps-floating-ad-layer {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+    z-index: 99990 !important;
+}
+
+.bmfb-floating-banner-display-active .wps-floating-ad {
+    position: fixed !important;
+    max-width: calc(50vw - 12px) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 99990 !important;
+}
+
+.bmfb-floating-banner-display-active .wps-floating-left {
+    left: 12px !important;
+    right: auto !important;
+    bottom: 140px !important;
+}
+
+.bmfb-floating-banner-display-active .wps-floating-right {
+    right: 12px !important;
+    left: auto !important;
+    bottom: 140px !important;
+}
+
+.bmfb-floating-banner-display-active .wps-floating-bottom,
+.bmfb-floating-banner-display-active [data-ad-slot="ads_floating_bottom"] {
+    position: fixed !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: calc(10px + env(safe-area-inset-bottom)) !important;
+    width: calc(100vw - 20px) !important;
+    max-width: 728px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    transform: translateX(-50%) !important;
+    pointer-events: auto !important;
+    z-index: 2147483000 !important;
+}
+
+.bmfb-floating-banner-display-active .wps-floating-ad .wps-floating-media {
+    display: block !important;
+    width: 140px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
+
+.bmfb-floating-banner-display-active .wps-floating-bottom .wps-floating-media {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Legacy floating-widget markup kept for older exported settings. */
+.bmfb-floating-banner-display-active #floating-widget {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: visible !important;
+    pointer-events: none !important;
+    z-index: 99990 !important;
+}
+
+.bmfb-floating-banner-display-active #floating-widget .promo-unit {
+    position: fixed !important;
+    max-width: calc(50vw - 12px) !important;
+    pointer-events: auto !important;
+    z-index: 99990 !important;
+}
+
+.bmfb-floating-banner-display-active #floating-widget .promo-left {
+    left: 12px !important;
+    right: auto !important;
+    bottom: 140px !important;
+}
+
+.bmfb-floating-banner-display-active #floating-widget .promo-right {
+    right: 12px !important;
+    left: auto !important;
+    bottom: 140px !important;
+}
+
+.bmfb-floating-banner-display-active #floating-widget .promo-unit img {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
+
+.bmfb-floating-banner-display-active #promo_04 {
+    position: fixed !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: calc(10px + env(safe-area-inset-bottom)) !important;
+    width: calc(100vw - 20px) !important;
+    max-width: 728px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    transform: translateX(-50%) !important;
+    pointer-events: auto !important;
+    z-index: 99990 !important;
+}
+
+/* Close controls remain clickable and above their own banner. */
+.bmfb-floating-banner-display-active .wps-floating-close,
+.bmfb-floating-banner-display-active .wps-floating-ad-close,
+.bmfb-floating-banner-display-active .wps-close-ad,
+.bmfb-floating-banner-display-active .wps-ad-close,
+.bmfb-floating-banner-display-active [data-ad-close],
+.bmfb-floating-banner-display-active #floating-widget .widget-close,
+.bmfb-floating-banner-display-active #floating-widget .promo-close {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 31px !important;
+    height: 31px !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    z-index: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 50% !important;
+    border: none !important;
+    padding: 0 !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Hover effect for close buttons */
+.bmfb-floating-banner-display-active .wps-floating-close:hover,
+.bmfb-floating-banner-display-active .wps-floating-ad-close:hover,
+.bmfb-floating-banner-display-active .wps-close-ad:hover,
+.bmfb-floating-banner-display-active .wps-ad-close:hover,
+.bmfb-floating-banner-display-active [data-ad-close]:hover,
+.bmfb-floating-banner-display-active #floating-widget .widget-close:hover,
+.bmfb-floating-banner-display-active #floating-widget .promo-close:hover {
+    background: rgba(0, 0, 0, 0.9) !important;
+    transform: scale(1.1) !important;
+}
+
+/* SVG styling for close buttons */
+.bmfb-floating-banner-display-active .wps-floating-close svg,
+.bmfb-floating-banner-display-active .wps-floating-ad-close svg,
+.bmfb-floating-banner-display-active .wps-close-ad svg,
+.bmfb-floating-banner-display-active .wps-ad-close svg,
+.bmfb-floating-banner-display-active [data-ad-close] svg,
+.bmfb-floating-banner-display-active #floating-widget .widget-close svg,
+.bmfb-floating-banner-display-active #floating-widget .promo-close svg {
+    width: 18px !important;
+    height: 18px !important;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    display: block !important;
+}
+
+@media (max-width: 767.98px) {
+    .bmfb-floating-banner-display-active .wps-floating-left {
+        left: 12px !important;
+        bottom: 115px !important;
+    }
+
+    .bmfb-floating-banner-display-active .wps-floating-right {
+        right: 12px !important;
+        bottom: 115px !important;
+    }
+
+    .bmfb-floating-banner-display-active #floating-widget .promo-left {
+        left: 4px !important;
+        bottom: 115px !important;
+    }
+
+    .bmfb-floating-banner-display-active #floating-widget .promo-right {
+        right: 4px !important;
+        bottom: 115px !important;
+    }
+
+    .bmfb-floating-banner-display-active .wps-floating-ad .wps-floating-media,
+    .bmfb-floating-banner-display-active #floating-widget .side-media {
+        width: min(82px, 22vw) !important;
+        max-width: min(82px, 22vw) !important;
+    }
+
+    .bmfb-floating-banner-display-active .wps-floating-bottom,
+    .bmfb-floating-banner-display-active [data-ad-slot="ads_floating_bottom"],
+    .bmfb-floating-banner-display-active #promo_04 {
+        width: calc(100vw - 16px) !important;
+        max-width: calc(100vw - 16px) !important;
+    }
+
+    .bmfb-floating-banner-display-active .wps-floating-bottom .wps-floating-media,
+    .bmfb-floating-banner-display-active #promo_04 img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}

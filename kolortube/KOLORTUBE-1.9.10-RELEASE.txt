@@ -1,0 +1,32 @@
+KolorTube v1.9.10 (1.9.10.zip)
+===============================
+
+Pink Theme palette + iPad/tablet layout & like-button fixes.
+
+Changes in 1.9.10
+-----------------
+
+1. iPad / tablet layout
+   - .single-video-player is constrained to 100% width with
+     margin calc(-50vw + 50%), so the 100vw horizontal scrollbar is gone.
+   - Header gap fix: .wrapper padding reset, first .wps-home-section
+     padding-top reduced to 12px.
+   - .single-video-infos .video-description fills its column, left aligned.
+
+2. Footer menu
+   - .site-footer footer menu is rendered as a horizontal left-to-right row.
+
+3. Pink palette (registered in Customizer)
+   New Theme Colors controls (wps_pink_*):
+   - Label/capsule gradient:  #ff6b9d -> #ff4f81
+   - Hover gradient:          #ff4f81 -> #e91e63
+   - Like button (active):    #e91e63 -> #c2185b
+   All text on those elements is white.
+   Category/Tag/Actor/Studio labels, capsule buttons and the active
+   Like button use these gradients through the theme WP-Script core.
+
+4. Like button AJAX (theme core only)
+   js/main.js sends the vote to action 'post-like' using the theme core
+   localized endpoint (wpst_ajax_var = admin-ajax + nonce), through
+   inc/class-wps-framework.php loading of ajax/post-like.php.
+   The handler never references a theme file path directly.

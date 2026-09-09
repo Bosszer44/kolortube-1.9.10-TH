@@ -1,0 +1,9 @@
+KolorTube v1.9.0
+=================
+
+Update package prepared from the supplied KolorTube theme archive.
+
+- Theme slug preserved as: kolortube
+- Theme version: 1.9.0
+- Existing theme files and functionality preserved
+- Version header is compatible with WordPress theme update/upload detection

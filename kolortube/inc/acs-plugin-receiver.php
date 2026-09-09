@@ -1,0 +1,6 @@
+<?php
+defined('ABSPATH') || exit;
+function acs_kolortube_receiver_payload(){ $theme=wp_get_theme(); $supports=apply_filters('acs/kolortube/theme_supports',array('kolortube_original_theme'=>true,'acs_receiver'=>true,'video_templates'=>true,'taxonomy_templates'=>true,'single_video_template'=>true,'archive_templates'=>true,'mobile_responsive_layout'=>true)); return array('theme_name'=>$theme->get('Name'),'theme_version'=>$theme->get('Version'),'stylesheet_directory'=>get_stylesheet_directory(),'template_directory'=>get_template_directory(),'stylesheet_uri'=>get_stylesheet_directory_uri(),'template_uri'=>get_template_directory_uri(),'supports'=>$supports); }
+add_action('after_setup_theme',function(){ do_action('acs/kolortube/theme_ready', acs_kolortube_receiver_payload()); },20);
+add_filter('acs/kolortube/template_context',function($context){ $context=is_array($context)?$context:array(); $context['receiver']=acs_kolortube_receiver_payload(); return $context; });
+add_action('admin_notices',function(){ if(!current_user_can('manage_options')||defined('ACS_VERSION'))return; echo '<div class="notice notice-info"><p>'.esc_html__('KolorTube receiver theme is active. Install and activate AI Content Studio to enable migrated AV Framework controls.','wpst').'</p></div>'; });

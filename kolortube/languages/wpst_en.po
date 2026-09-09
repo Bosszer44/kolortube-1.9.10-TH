@@ -1,0 +1,784 @@
+# Copyright (C) 2021 KolorTube
+# This file is distributed under the same license as the KolorTube package.
+msgid ""
+msgstr ""
+"Project-Id-Version: KolorTube\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+
+#: 404.php:14
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! That page can&rsquo;t be found."
+
+#: 404.php:17
+msgid "It looks like nothing was found. Please try another search."
+msgstr "It looks like nothing was found. Please try another search."
+
+#: 404.php:26
+msgid "In the meantime here are some videos you may like..."
+msgstr "In the meantime here are some videos you may like..."
+
+#: author.php:21
+msgid "About:"
+msgstr "About:"
+
+#: author.php:28
+msgid "Website"
+msgstr "Website"
+
+#: author.php:34
+msgid "Profile"
+msgstr "Profile"
+
+#: author.php:50
+msgid "Permanent Link:"
+msgstr "Permanent Link:"
+
+#: author.php:55
+msgid "in"
+msgstr "in"
+
+#: functions.php:220, functions.php:235
+msgid "Latest videos"
+msgstr "Latest videos"
+
+#: functions.php:223
+msgid "Most viewed videos"
+msgstr "Most viewed videos"
+
+#: functions.php:226
+msgid "Longest videos"
+msgstr "Longest videos"
+
+#: functions.php:229
+msgid "Popular videos"
+msgstr "Popular videos"
+
+#: functions.php:232
+msgid "Random videos"
+msgstr "Random videos"
+
+#: header.php:27
+msgid "Skip to content"
+msgstr "Skip to content"
+
+#: header.php:48
+msgid "Toggle navigation"
+msgstr "Toggle navigation"
+
+#: searchform.php:6
+msgctxt "wpst"
+msgid "Search..."
+msgstr "Search..."
+
+#: searchform.php:6
+msgctxt "wpst"
+msgid "Search for:"
+msgstr "Search for:"
+
+#: template-actors.php:3, inc/actors.php:20
+msgid "Actors"
+msgstr "Actors"
+
+#: template-categories.php:3, inc/theme-activation.php:157, inc/theme-activation.php:258
+msgid "Categories"
+msgstr "Categories"
+
+#: template-tags.php:3, inc/theme-activation.php:168, inc/theme-activation.php:266
+msgid "Tags"
+msgstr "Tags"
+
+#: admin/metabox.php:6
+msgid "Video information"
+msgstr "Video information"
+
+#: admin/metabox.php:20
+msgid "Video URL"
+msgstr "Video URL"
+
+#: admin/metabox.php:22
+msgid "Paste here the video URL or upload a video file (mp4, webm)."
+msgstr "Paste here the video URL or upload a video file (mp4, webm)."
+
+#: admin/metabox.php:32
+msgid "240p"
+msgstr "240p"
+
+#: admin/metabox.php:40
+msgid "360p"
+msgstr "360p"
+
+#: admin/metabox.php:48
+msgid "480p"
+msgstr "480p"
+
+#: admin/metabox.php:56
+msgid "720p"
+msgstr "720p"
+
+#: admin/metabox.php:64
+msgid "1080p"
+msgstr "1080p"
+
+#: admin/metabox.php:72
+msgid "4k"
+msgstr "4k"
+
+#: admin/metabox.php:84
+msgid "Video embed code"
+msgstr "Video embed code"
+
+#: admin/metabox.php:86
+msgid "Paste here the embed code (eg. Youtube iframe). It will automatically display the video player in the front of your site."
+msgstr "Paste here the embed code (eg. Youtube iframe). It will automatically display the video player in the front of your site."
+
+#: admin/metabox.php:93
+msgid "Video shortcode"
+msgstr "Video shortcode"
+
+#: admin/metabox.php:95
+msgid "Paste here the video shortcode (eg. [TM plugin=\"https://drive.google.com/...\"]). It will automatically display the video player in the front of your site."
+msgstr "Paste here the video shortcode (eg. [TM plugin=\"https://drive.google.com/...\"]). It will automatically display the video player in the front of your site."
+
+#: admin/metabox.php:102
+msgid "Duration"
+msgstr "Duration"
+
+#: admin/metabox.php:112
+msgid "Views"
+msgstr "Views"
+
+#: admin/metabox.php:132
+msgid "Likes"
+msgstr "Likes"
+
+#: admin/metabox.php:152
+msgid "Dislikes"
+msgstr "Dislikes"
+
+#: admin/metabox.php:172
+msgid "Video trailer URL"
+msgstr "Video trailer URL"
+
+#: admin/metabox.php:174
+msgid "Paste here the video trailer URL or upload a video file (mp4 or webm). It will be used as video preview on mouse hover."
+msgstr "Paste here the video trailer URL or upload a video file (mp4 or webm). It will be used as video preview on mouse hover."
+
+#: admin/metabox.php:185
+msgid "Main thumbnail"
+msgstr "Main thumbnail"
+
+#: admin/metabox.php:187
+msgid "Paste here the main thumb URL or upload an image file. If there isn't a featured image, this image will be used as main thumb."
+msgstr "Paste here the main thumb URL or upload an image file. If there isn't a featured image, this image will be used as main thumb."
+
+#: admin/metabox.php:203
+msgid "Thumbnails"
+msgstr "Thumbnails"
+
+#: admin/metabox.php:205
+msgid "Used for thumbnails rotation."
+msgstr "Used for thumbnails rotation."
+
+#: admin/metabox.php:213
+msgid "Tracking URL"
+msgstr "Tracking URL"
+
+#: admin/metabox.php:215
+msgid "Paste here the tracking URL you want to display as link under the video in the front of your site (http://...)."
+msgstr "Paste here the tracking URL you want to display as link under the video in the front of your site (http://...)."
+
+#: admin/metabox.php:223
+msgid "Advertising under the video player"
+msgstr "Advertising under the video player"
+
+#: admin/metabox.php:225
+msgid "Paste here the code of your banner, it will be displayed under the video player."
+msgstr "Paste here the code of your banner, it will be displayed under the video player."
+
+#: admin/options.php:57, admin/options.php:58
+msgid "Theme Options"
+msgstr "Theme Options"
+
+#: admin/options.php:71
+msgid "Main tab"
+msgstr "Main tab"
+
+#: admin/options.php:87
+msgid "<a href=\"%s\">Click here</a> to go to the Customizer."
+msgstr "<a href=\"%s\">Click here</a> to go to the Customizer."
+
+#: inc/actor-image.php:34, inc/actor-image.php:63, inc/category-image.php:34, inc/category-image.php:63
+msgid "Image"
+msgstr "Image"
+
+#: inc/actor-image.php:38, inc/actor-image.php:74, inc/category-image.php:38, inc/category-image.php:74
+msgid "Add Image"
+msgstr "Add Image"
+
+#: inc/actor-image.php:39, inc/actor-image.php:75, inc/category-image.php:39, inc/category-image.php:75
+msgid "Remove Image"
+msgstr "Remove Image"
+
+#: inc/actors.php:6
+msgctxt "wpst"
+msgid "Actors"
+msgstr "Actors"
+
+#: inc/actors.php:7
+msgctxt "wpst"
+msgid "Actor"
+msgstr "Actor"
+
+#: inc/actors.php:8
+msgid "Search Actors"
+msgstr "Search Actors"
+
+#: inc/actors.php:9
+msgid "Popular Actors"
+msgstr "Popular Actors"
+
+#: inc/actors.php:10
+msgid "All Actors"
+msgstr "All Actors"
+
+#: inc/actors.php:13
+msgid "Edit Actor"
+msgstr "Edit Actor"
+
+#: inc/actors.php:14
+msgid "Update Actor"
+msgstr "Update Actor"
+
+#: inc/actors.php:15
+msgid "Add New Actor"
+msgstr "Add New Actor"
+
+#: inc/actors.php:16
+msgid "New Actor Name"
+msgstr "New Actor Name"
+
+#: inc/actors.php:17
+msgid "Separate Actors with commas"
+msgstr "Separate Actors with commas"
+
+#: inc/actors.php:18
+msgid "Add or remove Actors"
+msgstr "Add or remove Actors"
+
+#: inc/actors.php:19
+msgid "Choose from the most used Actors"
+msgstr "Choose from the most used Actors"
+
+#: inc/customizer.php:49
+msgid "General"
+msgstr "General"
+
+#: inc/customizer.php:67
+msgid "Enable video preview"
+msgstr "Enable video preview"
+
+#: inc/customizer.php:68
+msgid "Enable video preview on thumb mouse hover."
+msgstr "Enable video preview on thumb mouse hover."
+
+#: inc/customizer.php:74, inc/customizer.php:102
+msgid "Yes"
+msgstr "Yes"
+
+#: inc/customizer.php:75, inc/customizer.php:103
+msgid "No"
+msgstr "No"
+
+#: inc/customizer.php:95
+msgid "Enable thumbs rotation"
+msgstr "Enable thumbs rotation"
+
+#: inc/customizer.php:96
+msgid "Enable thumbs rotation on thumb mouse hover."
+msgstr "Enable thumbs rotation on thumb mouse hover."
+
+#: inc/customizer.php:116
+msgid "Colors"
+msgstr "Colors"
+
+#: inc/customizer.php:134
+msgid "Main Color"
+msgstr "Main Color"
+
+#: inc/customizer.php:154
+msgid "Link Color"
+msgstr "Link Color"
+
+#: inc/customizer.php:167
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: inc/customizer.php:187
+msgid "Sidebar Positioning"
+msgstr "Sidebar Positioning"
+
+#: inc/customizer.php:188
+msgid "Set sidebar's default position. Can either be: right, left or none."
+msgstr "Set sidebar's default position. Can either be: right, left or none."
+
+#: inc/customizer.php:197
+msgid "Left sidebar"
+msgstr "Left sidebar"
+
+#: inc/customizer.php:198
+msgid "Right sidebar"
+msgstr "Right sidebar"
+
+#: inc/customizer.php:199
+msgid "No sidebar"
+msgstr "No sidebar"
+
+#: inc/customizer.php:215
+msgid "Advertising"
+msgstr "Advertising"
+
+#: inc/customizer.php:216
+msgid "Settings to add ads into your site"
+msgstr "Settings to add ads into your site"
+
+#: inc/customizer.php:229, inc/customizer.php:804
+msgid "Homepage"
+msgstr "Homepage"
+
+#: inc/customizer.php:230
+msgid "Add your own ads on the homepage."
+msgstr "Add your own ads on the homepage."
+
+#: inc/customizer.php:249, inc/customizer.php:486, inc/customizer.php:567, inc/customizer.php:648, inc/customizer.php:729
+msgid "Ad zone before videos list"
+msgstr "Ad zone before videos list"
+
+#: inc/customizer.php:271, inc/customizer.php:508, inc/customizer.php:589, inc/customizer.php:670, inc/customizer.php:751
+msgid "Ad zone inside videos list"
+msgstr "Ad zone inside videos list"
+
+#: inc/customizer.php:293, inc/customizer.php:530, inc/customizer.php:611, inc/customizer.php:692, inc/customizer.php:773
+msgid "Ad zone after videos list"
+msgstr "Ad zone after videos list"
+
+#: inc/customizer.php:310
+msgid "Single Video Page"
+msgstr "Single Video Page"
+
+#: inc/customizer.php:311
+msgid "Add your own ads on single video pages."
+msgstr "Add your own ads on single video pages."
+
+#: inc/customizer.php:330
+msgid "In player ad zone 1"
+msgstr "In player ad zone 1"
+
+#: inc/customizer.php:352
+msgid "In player ad zone 2"
+msgstr "In player ad zone 2"
+
+#: inc/customizer.php:374
+msgid "Under player ad zone"
+msgstr "Under player ad zone"
+
+#: inc/customizer.php:396
+msgid "Beside player ad zone 1"
+msgstr "Beside player ad zone 1"
+
+#: inc/customizer.php:418
+msgid "Beside player ad zone 2"
+msgstr "Beside player ad zone 2"
+
+#: inc/customizer.php:440
+msgid "Before related videos ad zone"
+msgstr "Before related videos ad zone"
+
+#: inc/customizer.php:466
+msgid "Actor Page"
+msgstr "Actor Page"
+
+#: inc/customizer.php:467
+msgid "Add your own ads on the Actor pages."
+msgstr "Add your own ads on the Actor pages."
+
+#: inc/customizer.php:547
+msgid "Category Page"
+msgstr "Category Page"
+
+#: inc/customizer.php:548
+msgid "Add your own ads on the Category pages."
+msgstr "Add your own ads on the Category pages."
+
+#: inc/customizer.php:628
+msgid "Tag Page"
+msgstr "Tag Page"
+
+#: inc/customizer.php:629
+msgid "Add your own ads on the Tag pages."
+msgstr "Add your own ads on the Tag pages."
+
+#: inc/customizer.php:709
+msgid "Search Result Page"
+msgstr "Search Result Page"
+
+#: inc/customizer.php:710
+msgid "Add your own ads on the search result pages."
+msgstr "Add your own ads on the search result pages."
+
+#: inc/customizer.php:790
+msgid "SEO"
+msgstr "SEO"
+
+#: inc/customizer.php:791
+msgid "Several settings pertaining my theme"
+msgstr "Several settings pertaining my theme"
+
+#: inc/customizer.php:805
+msgid "Rewrite content on homepage to improve SEO."
+msgstr "Rewrite content on homepage to improve SEO."
+
+#: inc/customizer.php:824, inc/customizer.php:1021, inc/customizer.php:1134, inc/customizer.php:1248
+msgid "Position"
+msgstr "Position"
+
+#: inc/customizer.php:825, inc/customizer.php:1022, inc/customizer.php:1135, inc/customizer.php:1249
+msgid "Set the position of the title and description of this page. Can either be: top or bottom."
+msgstr "Set the position of the title and description of this page. Can either be: top or bottom."
+
+#: inc/customizer.php:831, inc/customizer.php:1028, inc/customizer.php:1141, inc/customizer.php:1255
+msgid "Top"
+msgstr "Top"
+
+#: inc/customizer.php:832, inc/customizer.php:1029, inc/customizer.php:1142, inc/customizer.php:1256
+msgid "Bottom"
+msgstr "Bottom"
+
+#: inc/customizer.php:853
+msgid "Home Title"
+msgstr "Home Title"
+
+#: inc/customizer.php:875
+msgid "Home Description"
+msgstr "Home Description"
+
+#: inc/customizer.php:892
+msgid "Single video pages"
+msgstr "Single video pages"
+
+#: inc/customizer.php:893
+msgid "Rewrite content on video pages to improve SEO."
+msgstr "Rewrite content on video pages to improve SEO."
+
+#: inc/customizer.php:895
+msgid "display video title."
+msgstr "display video title."
+
+#: inc/customizer.php:916
+msgid "Video Title"
+msgstr "Video Title"
+
+#: inc/customizer.php:937
+msgid "Video Tracking Button"
+msgstr "Video Tracking Button"
+
+#: inc/customizer.php:959
+msgid "Related Videos Title"
+msgstr "Related Videos Title"
+
+#: inc/customizer.php:981
+msgid "More related videos button label"
+msgstr "More related videos button label"
+
+#: inc/customizer.php:997
+msgid "Category pages"
+msgstr "Category pages"
+
+#: inc/customizer.php:998
+msgid "Rewrite content on category pages to improve SEO."
+msgstr "Rewrite content on category pages to improve SEO."
+
+#: inc/customizer.php:1000
+msgid "display category name."
+msgstr "display category name."
+
+#: inc/customizer.php:1072
+msgid "Category Title"
+msgstr "Category Title"
+
+#: inc/customizer.php:1093
+msgid "Category Description"
+msgstr "Category Description"
+
+#: inc/customizer.php:1110
+msgid "Tag pages"
+msgstr "Tag pages"
+
+#: inc/customizer.php:1111
+msgid "Rewrite content on tag pages to improve SEO."
+msgstr "Rewrite content on tag pages to improve SEO."
+
+#: inc/customizer.php:1113
+msgid "display tag name."
+msgstr "display tag name."
+
+#: inc/customizer.php:1185
+msgid "Tag Title"
+msgstr "Tag Title"
+
+#: inc/customizer.php:1206
+msgid "Tag Description"
+msgstr "Tag Description"
+
+#: inc/customizer.php:1223
+msgid "Search result pages"
+msgstr "Search result pages"
+
+#: inc/customizer.php:1224
+msgid "Rewrite content on search result pages."
+msgstr "Rewrite content on search result pages."
+
+#: inc/customizer.php:1226
+msgid "display search tag name."
+msgstr "display search tag name."
+
+#: inc/customizer.php:1227
+msgid "display search result number."
+msgstr "display search result number."
+
+#: inc/customizer.php:1277
+msgid "Search Title"
+msgstr "Search Title"
+
+#: inc/customizer.php:1298
+msgid "Search Description"
+msgstr "Search Description"
+
+#: inc/customizer.php:1312
+msgid "Copyright"
+msgstr "Copyright"
+
+#: inc/customizer.php:1321
+msgid "All rights reserved. Powered by WP-Script.com"
+msgstr "All rights reserved. Powered by WP-Script.com"
+
+#: inc/customizer.php:1331
+msgid "Content"
+msgstr "Content"
+
+#: inc/customizer.php:1345
+msgid "Scripts"
+msgstr "Scripts"
+
+#: inc/customizer.php:1364
+msgid "Google Analytics"
+msgstr "Google Analytics"
+
+#: inc/customizer.php:1368
+msgid "Paste here your Google Analytics tracking code."
+msgstr "Paste here your Google Analytics tracking code."
+
+#: inc/customizer.php:1387
+msgid "Meta Verification"
+msgstr "Meta Verification"
+
+#: inc/customizer.php:1391
+msgid "Paste here meta codes for domain verification."
+msgstr "Paste here meta codes for domain verification."
+
+#: inc/customizer.php:1410
+msgid "Other scripts"
+msgstr "Other scripts"
+
+#: inc/customizer.php:1414
+msgid "Paste here your other scripts (eg. popunder script)"
+msgstr "Paste here your other scripts (eg. popunder script)"
+
+#: inc/init.php:7
+msgid "KolorTube Theme needs %s to be installed and activated."
+msgstr "KolorTube Theme needs %s to be installed and activated."
+
+#: inc/init.php:33
+msgid "Please purchase a KolorTube plan: %s"
+msgstr "Please purchase a KolorTube plan: %s"
+
+#: inc/pagination.php:55, inc/pagination.php:81
+msgid "&laquo;"
+msgstr "&laquo;"
+
+#: inc/pagination.php:56, inc/pagination.php:85
+msgid "&raquo;"
+msgstr "&raquo;"
+
+#: inc/pagination.php:57
+msgid "Posts navigation"
+msgstr "Posts navigation"
+
+#: inc/post-like.php:35, inc/post-like.php:23
+msgid "I like this"
+msgstr "I like this"
+
+#: inc/post-like.php:43, inc/post-like.php:31
+msgid "I dislike this"
+msgstr "I dislike this"
+
+#: inc/setup.php:52
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+#: inc/setup.php:53
+msgid "Footer Menu"
+msgstr "Footer Menu"
+
+#: inc/setup.php:135
+msgid "Read More..."
+msgstr "Read More..."
+
+#: inc/theme-activation.php:148
+msgid "Home"
+msgstr "Home"
+
+#: inc/theme-activation.php:197
+msgid "18 U.S.C 2257"
+msgstr "18 U.S.C 2257"
+
+#: inc/theme-activation.php:208
+msgid "DMCA"
+msgstr "DMCA"
+
+#: inc/theme-activation.php:219
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+#: inc/theme-activation.php:230
+msgid "Terms of Use"
+msgstr "Terms of Use"
+
+#: inc/theme-activation.php:249
+msgid "Filters"
+msgstr "Filters"
+
+#. translators: %s: post title
+#: inc/video-functions.php:117
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+
+#: inc/widget-video-cats.php:154
+msgid "See all categories"
+msgstr "See all categories"
+
+#: inc/widget-video-filters.php:56
+msgid "Newest"
+msgstr "Newest"
+
+#: inc/widget-video-filters.php:59
+msgid "Popular"
+msgstr "Popular"
+
+#: inc/widget-video-filters.php:62
+msgid "Most viewed"
+msgstr "Most viewed"
+
+#: inc/widget-video-filters.php:65
+msgid "Longest"
+msgstr "Longest"
+
+#: inc/widget-video-filters.php:68
+msgid "Random"
+msgstr "Random"
+
+#: inc/widget-video-tags.php:154
+msgid "See all tags"
+msgstr "See all tags"
+
+#: loop-templates/content-single-video.php:128
+msgid "views"
+msgstr "views"
+
+#: loop-templates/content-video-player.php:257
+msgid "Close Advertising"
+msgstr "Close Advertising"
+
+#: loop-templates/loop-category.php:13
+msgid "videos"
+msgstr "videos"
+
+#: page-templates/blank.php:3
+msgid "Blank Page Template"
+msgstr "Blank Page Template"
+
+#: page-templates/both-sidebarspage.php:3
+msgid "Left and Right Sidebar Layout"
+msgstr "Left and Right Sidebar Layout"
+
+#: page-templates/empty.php:3
+msgid "Empty Page Template"
+msgstr "Empty Page Template"
+
+#: page-templates/fullwidthpage.php:3
+msgid "Full Width Page"
+msgstr "Full Width Page"
+
+#: page-templates/left-sidebarpage.php:3
+msgid "Left Sidebar Layout"
+msgstr "Left Sidebar Layout"
+
+#: page-templates/right-sidebarpage.php:3
+msgid "Right Sidebar Layout"
+msgstr "Right Sidebar Layout"
+
+#: tgmpa/config.php:41
+msgid "Install Required Plugins"
+msgstr "Install Required Plugins"
+
+#: tgmpa/config.php:42
+msgid "Install Plugins"
+msgstr "Install Plugins"
+
+#. translators: %s: plugin name.
+#: tgmpa/config.php:44
+msgid "Installing Plugin: %s"
+msgstr "Installing Plugin: %s"
+
+#. translators: %s: plugin name.
+#: tgmpa/config.php:46
+msgid "Updating Plugin: %s"
+msgstr "Updating Plugin: %s"
+
+#: tgmpa/config.php:47
+msgid "Something went wrong with the plugin API."
+msgstr "Something went wrong with the plugin API."
+
+#. translators: 1: plugin name(s).
+#: tgmpa/config.php:49
+msgid "WP-Script products requires the following plugin: %1$s."
+msgid_plural "WP-Script products requires the following plugins: %1$s."
+msgstr[0] "WP-Script products requires the following plugin: %1$s."
+msgstr[1] "WP-Script products requires the following plugins: %1$s."
+
+#. translators: 1: plugin name(s).
+#: tgmpa/config.php:55
+msgid "WP-Script products recommends the following plugin: %1$s."
+msgid_plural "TWP-Script products recommends the following plugins: %1$s."
+msgstr[0] "WP-Script products recommends the following plugin: %1$s."
+msgstr[1] "TWP-Script products recommends the following plugins: %1$s."
+
+#. translators: 1: plugin name(s).
+#: tgmpa/config.php:61
+msgid "The following WP-Script product needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s."
+msgid_plural "The following WP-Script products need to be updated to their latest version to ensure maximum compatibility with this plugin: %1$s."
+msgstr[0] "The following WP-Script product needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s."
+msgstr[1] "The following WP-Script products need to be updated to their latest version to ensure maximum compatibility with this plugin: %1$s."

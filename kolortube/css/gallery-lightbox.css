@@ -1,0 +1,541 @@
+/* =========================================================
+   KOLOR TUBE — GALLERY LIGHTBOX
+   รองรับทุกชนิด: .video-gallery / .wp-block-gallery / .player-gallery-grid / รูปภาพในเนื้อหา
+   ชื่อคลาสทำงานร่วมกัน: .wps-lightbox-overlay / .gallery-lightbox / .wpst-gallery-lightbox / .wpmb-lightbox
+   ========================================================= */
+
+/* ---------- Overlay (พื้นหลังมืด) ---------- */
+.wps-lightbox-overlay,
+.gallery-lightbox,
+.wpst-gallery-lightbox,
+.wpmb-lightbox {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 999999 !important;
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    background: rgba(0, 0, 0, 0.92) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity .3s ease, visibility .3s ease !important;
+    overflow: hidden !important;
+}
+
+.wps-lightbox-overlay.active,
+.gallery-lightbox.active,
+.wpst-gallery-lightbox.is-open,
+.wpmb-lightbox.is-open {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* ---------- Stage (พื้นที่แสดงรูป) ---------- */
+.wps-lightbox-stage {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ---------- รูปภาพตอนเปิดเต็มจอ ---------- */
+.wps-lightbox-overlay img,
+.gallery-lightbox img,
+.wpst-gallery-lightbox img,
+.wpst-gallery-lightbox-image,
+.wpmb-lightbox img {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 90% !important;
+    max-height: 85vh !important;
+    object-fit: contain !important;
+    border-radius: 12px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    pointer-events: none !important;
+    cursor: default !important;
+    transform: scale(.94) !important;
+    opacity: 0 !important;
+    will-change: transform, opacity !important;
+    transition: opacity .28s ease, transform .32s cubic-bezier(.2,.8,.2,1) !important;
+}
+
+.wps-lightbox-overlay.active img,
+.gallery-lightbox.active img,
+.wpst-gallery-lightbox.is-open img,
+.wpmb-lightbox.is-open img {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+.wps-lightbox-overlay.is-changing img,
+.gallery-lightbox.is-changing img,
+.wpst-gallery-lightbox.is-changing img,
+.wpmb-lightbox.is-changing img {
+    opacity: .15 !important;
+    transform: scale(.97) !important;
+}
+
+/* ---------- 🔘 ปุ่มปิด (×) ---------- */
+.wps-lightbox-close,
+.gallery-lightbox .lb-close,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-close,
+.wpmb-lightbox .wpmb-lightbox-close {
+    position: absolute !important;
+    top: 20px !important;
+    right: 24px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    color: #fff !important;
+    font: 400 24px/1 Arial, sans-serif !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: all .25s ease !important;
+    z-index: 20 !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    box-shadow: 0 8px 28px rgba(0,0,0,.35) !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.wps-lightbox-close:hover,
+.gallery-lightbox .lb-close:hover,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-close:hover,
+.wpmb-lightbox .wpmb-lightbox-close:hover {
+    background: linear-gradient(135deg, #4a90e2, #b85aa8) !important;
+    transform: rotate(90deg) scale(1.06) !important;
+    box-shadow: 0 12px 34px rgba(0,0,0,.48) !important;
+    filter: brightness(1.08) !important;
+}
+
+.wps-lightbox-close:active,
+.gallery-lightbox .lb-close:active,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-close:active,
+.wpmb-lightbox .wpmb-lightbox-close:active {
+    transform: scale(.90) !important;
+}
+
+/* ---------- ◀ ▶ ปุ่มเลื่อนรูป ซ้าย-ขวา ---------- */
+.wps-lightbox-prev,
+.wps-lightbox-next,
+.gallery-lightbox .lb-prev,
+.gallery-lightbox .lb-next,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-prev,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-next,
+.wpmb-lightbox .wpmb-lightbox-prev,
+.wpmb-lightbox .wpmb-lightbox-next {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: all .25s ease !important;
+    z-index: 20 !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    box-shadow: 0 8px 28px rgba(0,0,0,.35) !important;
+    -webkit-tap-highlight-color: transparent !important;
+    line-height: 1 !important;
+}
+
+.wps-lightbox-prev span,
+.wps-lightbox-next span,
+.gallery-lightbox .lb-prev span,
+.gallery-lightbox .lb-next span,
+.wpst-gallery-lightbox-prev span,
+.wpst-gallery-lightbox-next span,
+.wpmb-lightbox-prev span,
+.wpmb-lightbox-next span {
+    display: block !important;
+    font: 400 34px/1 Arial, sans-serif !important;
+    margin-top: -3px !important;
+}
+
+.wps-lightbox-prev,
+.gallery-lightbox .lb-prev,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-prev,
+.wpmb-lightbox .wpmb-lightbox-prev {
+    left: 15px !important;
+}
+
+.wps-lightbox-next,
+.gallery-lightbox .lb-next,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-next,
+.wpmb-lightbox .wpmb-lightbox-next {
+    right: 15px !important;
+}
+
+.wps-lightbox-prev:hover,
+.wps-lightbox-next:hover,
+.gallery-lightbox .lb-prev:hover,
+.gallery-lightbox .lb-next:hover,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-prev:hover,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-next:hover,
+.wpmb-lightbox .wpmb-lightbox-prev:hover,
+.wpmb-lightbox .wpmb-lightbox-next:hover {
+    background: linear-gradient(135deg, #4a90e2, #b85aa8) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 12px 34px rgba(0,0,0,.48) !important;
+    filter: brightness(1.08) !important;
+}
+
+.wps-lightbox-prev:active,
+.wps-lightbox-next:active,
+.gallery-lightbox .lb-prev:active,
+.gallery-lightbox .lb-next:active,
+.wpst-gallery-lightbox-prev:active,
+.wpst-gallery-lightbox-next:active,
+.wpmb-lightbox-prev:active,
+.wpmb-lightbox-next:active {
+    transform: translateY(-50%) scale(.90) !important;
+}
+
+.wps-lightbox-prev[hidden],
+.wps-lightbox-next[hidden],
+.wps-lightbox-counter[hidden] {
+    display: none !important;
+}
+
+/* ---------- 📌 ตัวนับรูปที่ / ทั้งหมด ---------- */
+.wps-lightbox-counter,
+.gallery-lightbox .lb-counter,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-count,
+.wpmb-lightbox .wpmb-lightbox-count {
+    position: absolute !important;
+    bottom: 24px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    padding: 6px 18px !important;
+    border-radius: 999px !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    z-index: 20 !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    min-width: 44px !important;
+}
+
+/* ---------- Focus outline สำหรับ accessibility ---------- */
+.wps-lightbox-close:focus-visible,
+.wps-lightbox-prev:focus-visible,
+.wps-lightbox-next:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, .6) !important;
+    outline-offset: 3px !important;
+}
+
+/* ---------- Gallery trigger — cursor ชี้ให้เห็นว่าคลิกได้ ---------- */
+.video-gallery .wps-lightbox-trigger,
+.wp-block-gallery a,
+.player-gallery-grid a {
+    display: block !important;
+    position: relative !important;
+    z-index: 3 !important;
+    pointer-events: auto !important;
+    cursor: zoom-in !important;
+    text-decoration: none !important;
+}
+
+.video-gallery .wps-lightbox-trigger img,
+.wp-block-gallery a img,
+.player-gallery-grid a img {
+    pointer-events: none !important;
+}
+
+/* ---------- Responsive: Tablet ---------- */
+@media (max-width: 1024px) {
+    .wps-lightbox-overlay img,
+    .gallery-lightbox img,
+    .wpst-gallery-lightbox img,
+    .wpmb-lightbox img {
+        max-width: 88vw !important;
+        max-height: 82vh !important;
+    }
+}
+
+/* ---------- Responsive: Mobile ---------- */
+@media (max-width: 767.98px) {
+    .wps-lightbox-close,
+    .gallery-lightbox .lb-close,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-close,
+    .wpmb-lightbox .wpmb-lightbox-close {
+        top: 10px !important;
+        right: 10px !important;
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 22px !important;
+    }
+
+    .wps-lightbox-prev,
+    .wps-lightbox-next,
+    .gallery-lightbox .lb-prev,
+    .gallery-lightbox .lb-next,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-prev,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-next,
+    .wpmb-lightbox .wpmb-lightbox-prev,
+    .wpmb-lightbox .wpmb-lightbox-next {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+    .wps-lightbox-prev,
+    .gallery-lightbox .lb-prev,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-prev,
+    .wpmb-lightbox .wpmb-lightbox-prev {
+        left: 7px !important;
+    }
+
+    .wps-lightbox-next,
+    .gallery-lightbox .lb-next,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-next,
+    .wpmb-lightbox .wpmb-lightbox-next {
+        right: 7px !important;
+    }
+
+    .wps-lightbox-prev span,
+    .wps-lightbox-next span,
+    .gallery-lightbox .lb-prev span,
+    .gallery-lightbox .lb-next span,
+    .wpst-gallery-lightbox-prev span,
+    .wpst-gallery-lightbox-next span,
+    .wpmb-lightbox-prev span,
+    .wpmb-lightbox-next span {
+        font-size: 30px !important;
+    }
+
+    .wps-lightbox-counter,
+    .gallery-lightbox .lb-counter,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-count,
+    .wpmb-lightbox .wpmb-lightbox-count {
+        bottom: 10px !important;
+        font-size: 12px !important;
+    }
+
+    .wps-lightbox-overlay img,
+    .gallery-lightbox img,
+    .wpst-gallery-lightbox img,
+    .wpmb-lightbox img {
+        max-width: calc(100vw - 40px) !important;
+        max-height: calc(100vh - 105px) !important;
+        border-radius: 9px !important;
+    }
+}
+
+/* ---------- Responsive: มือถือจอเล็กมาก ---------- */
+@media (max-width: 380px) {
+    .wps-lightbox-prev,
+    .gallery-lightbox .lb-prev,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-prev,
+    .wpmb-lightbox .wpmb-lightbox-prev {
+        left: 5px !important;
+    }
+
+    .wps-lightbox-next,
+    .gallery-lightbox .lb-next,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-next,
+    .wpmb-lightbox .wpmb-lightbox-next {
+        right: 5px !important;
+    }
+}
+/* =========================================================
+   FIX 2026-09-05 — LIGHTBOX FULLSCREEN ON EVERY DEVICE
+   ก่อนหน้านี้ #wrapper-navbar ถูกตั้ง z-index 2147483647
+   (สูงสุด) ใน custom.css ทำให้เฮดเดอร์ทับ lightbox ทั้งจอ
+   โดยเฉพาะมือถือ (เฮดเดอร์เป็น fixed) ปุ่มปิดจึงกดไม่ได้
+   ---------------------------------------------------------
+   1) ยก lightbox ขึ้นเป็น z-index สูงสุดเท่าที่เบราว์เซอร์รองรับ
+   2) ขณะเปิด lightbox body จะมีคลาส .wps-lightbox-open
+      (เพิ่มจาก js/gallery-lightbox.js) -> กดทุกชั้นของเฮดเดอร์
+      ลงให้ต่ำกว่า overlay ชั่วคราว แล้วคืนค่าเมื่อปิด
+   3) ภาพใช้ dynamic viewport (dvh) แสดงเต็มจอทุกอุปกรณ์
+   ========================================================= */
+
+/* 1) Overlay อยู่บนสุดเสมอ ทับทุกอย่างรวมเฮดเดอร์ */
+.wps-lightbox-overlay,
+.gallery-lightbox,
+.wpst-gallery-lightbox,
+.wpmb-lightbox {
+    z-index: 2147483647 !important;
+}
+
+/* 2) ขณะ lightbox เปิด: เฮดเดอร์/เมนู/องค์ประกอบลอยใดๆ ถูกดันลงใต้ overlay */
+html body.wps-lightbox-open #wrapper-navbar,
+html body.wps-lightbox-open #wrapper-navbar .navbar,
+html body.wps-lightbox-open #wrapper-navbar .bg-darken,
+html body.wps-lightbox-open #wrapper-navbar .navbar-collapse,
+html body.wps-lightbox-open #wrapper-navbar .nav-container,
+html body.wps-lightbox-open #wrapper-navbar .search-nav,
+html body.wps-lightbox-open #wrapper-navbar .header-search-form,
+html body.wps-lightbox-open #wrapper-navbar .dropdown-menu,
+html body.wps-lightbox-open #wrapper-navbar .navbar-nav,
+html body.wps-lightbox-open .skip-link {
+    z-index: 2147483000 !important; /* ต่ำกว่า overlay (2147483647) เสมอ */
+}
+/* พื้นหลัง gradient ยังอยู่ใต้ทุกอย่างตามเดิม */
+html body.wps-lightbox-open .body-gradient {
+    z-index: -1 !important;
+}
+html body.wps-lightbox-open,
+html body.wps-lightbox-open #page,
+html body.wps-lightbox-open #wrapper-navbar {
+    position: relative !important;
+}
+
+/* 3) ภาพเต็มจอทุกอุปกรณ์ (fallback 100vh แล้วใช้ 100dvh บนมือถือ) */
+.wps-lightbox-stage {
+    padding: 0 !important;
+}
+.wps-lightbox-overlay img,
+.gallery-lightbox img,
+.wpst-gallery-lightbox img,
+.wpst-gallery-lightbox-image,
+.wpmb-lightbox img {
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    max-height: 100dvh !important;
+    border-radius: 8px !important;
+}
+
+/* ปุ่มควบคุมอยู่เหนือรูปภาพเสมอ (ภายใน overlay) */
+.wps-lightbox-close,
+.gallery-lightbox .lb-close,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-close,
+.wpmb-lightbox .wpmb-lightbox-close,
+.wps-lightbox-prev,
+.wps-lightbox-next,
+.gallery-lightbox .lb-prev,
+.gallery-lightbox .lb-next,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-prev,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-next,
+.wpmb-lightbox .wpmb-lightbox-prev,
+.wpmb-lightbox .wpmb-lightbox-next,
+.wps-lightbox-counter {
+    z-index: 2147483646 !important;
+    opacity: 1 !important;
+}
+
+/* Hover ตามสี Main Color (ไม่ใช้สีชมพู-ฟ้าตายตัว) */
+.wps-lightbox-close:hover,
+.gallery-lightbox .lb-close:hover,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-close:hover,
+.wpmb-lightbox .wpmb-lightbox-close:hover,
+.wps-lightbox-prev:hover,
+.wps-lightbox-next:hover,
+.gallery-lightbox .lb-prev:hover,
+.gallery-lightbox .lb-next:hover,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-prev:hover,
+.wpst-gallery-lightbox .wpst-gallery-lightbox-next:hover,
+.wpmb-lightbox .wpmb-lightbox-prev:hover,
+.wpmb-lightbox .wpmb-lightbox-next:hover {
+    background: var(--wps-button-gradient, linear-gradient(135deg, #26adfe, #7b18ff, #c00bff)) !important;
+    background-image: var(--wps-button-gradient, linear-gradient(135deg, #26adfe, #7b18ff, #c00bff)) !important;
+    border-color: transparent !important;
+}
+
+/* ป้องกัน scroll หลุด / bounce ขณะเปิด lightbox */
+html body.wps-lightbox-open {
+    overflow: hidden !important;
+    height: 100% !important;
+    overscroll-behavior: none !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+/* ---------- มือถือ: ปุ่มปิด/ถัดไป เซฟโซน กดง่าย ไม่โดน notch ---------- */
+@media (max-width: 1023.98px), (hover: none) and (pointer: coarse) {
+    .wps-lightbox-close,
+    .gallery-lightbox .lb-close,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-close,
+    .wpmb-lightbox .wpmb-lightbox-close {
+        top: max(12px, env(safe-area-inset-top, 0px)) !important;
+        right: max(12px, env(safe-area-inset-right, 0px)) !important;
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 26px !important;
+        background: rgba(0, 0, 0, 0.45) !important;
+        border: none !important;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .wps-lightbox-prev,
+    .wps-lightbox-next,
+    .gallery-lightbox .lb-prev,
+    .gallery-lightbox .lb-next,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-prev,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-next,
+    .wpmb-lightbox .wpmb-lightbox-prev,
+    .wpmb-lightbox .wpmb-lightbox-next {
+        width: 48px !important;
+        height: 48px !important;
+        background: rgba(0, 0, 0, 0.45) !important;
+        border: none !important;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .wps-lightbox-prev,
+    .gallery-lightbox .lb-prev,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-prev,
+    .wpmb-lightbox .wpmb-lightbox-prev {
+        left: max(8px, env(safe-area-inset-left, 0px)) !important;
+    }
+
+    .wps-lightbox-next,
+    .gallery-lightbox .lb-next,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-next,
+    .wpmb-lightbox .wpmb-lightbox-next {
+        right: max(8px, env(safe-area-inset-right, 0px)) !important;
+    }
+
+    .wps-lightbox-overlay img,
+    .gallery-lightbox img,
+    .wpst-gallery-lightbox img,
+    .wpst-gallery-lightbox-image,
+    .wpmb-lightbox img {
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        max-height: 100dvh !important;
+        border-radius: 6px !important;
+    }
+
+    .wps-lightbox-counter,
+    .gallery-lightbox .lb-counter,
+    .wpst-gallery-lightbox .wpst-gallery-lightbox-count,
+    .wpmb-lightbox .wpmb-lightbox-count {
+        bottom: max(10px, env(safe-area-inset-bottom, 0px)) !important;
+    }
+}

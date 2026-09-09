@@ -1,0 +1,18 @@
+.avsora-cc-wrap{max-width:1400px}.avsora-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:18px;margin:18px 0}.avsora-card{background:#fff;border:1px solid #dcdcde;border-radius:6px;padding:18px;margin:18px 0;box-shadow:0 1px 1px rgba(0,0,0,.04)}.avsora-card h2{margin-top:0}.avsora-warning{border-left:4px solid #dba617}.avsora-code-editor{font-family:Consolas,Monaco,monospace;tab-size:4;white-space:pre}.avsora-inline-form{display:inline-flex;gap:5px;align-items:center;margin:2px 8px 2px 0}.avsora-inline-form input[type=text]{max-width:180px}.avsora-table-scroll{overflow:auto;max-height:650px}.avsora-group-checkboxes{padding:10px 0;line-height:1.9}.avsora-card pre{white-space:pre-wrap;word-break:break-word;background:#f6f7f7;padding:12px;border:1px solid #dcdcde;max-height:500px;overflow:auto}@media(max-width:782px){.avsora-grid{grid-template-columns:1fr}.avsora-inline-form{display:flex;margin-bottom:8px}}
+
+/* WPS 4.3.7: make File Manager easier to use on mobile/admin drawer */
+.wps-file-manager-wrap .widefat{min-width:760px}
+.wps-file-manager-wrap .avsora-card{overflow:auto}
+.wps-file-manager-wrap .avsora-code-editor{width:100%;min-height:520px}
+@media(max-width:782px){
+  .wps-file-manager-wrap{padding-right:10px}
+  .wps-file-manager-wrap .regular-text,
+  .wps-file-manager-wrap input[type=text],
+  .wps-file-manager-wrap input[type=file],
+  .wps-file-manager-wrap select{width:100%;max-width:100%;margin:4px 0}
+  .wps-file-manager-wrap .widefat{min-width:640px}
+  .wps-file-manager-wrap .avsora-card{padding:12px;margin:12px 0;max-width:100%;overflow:auto;-webkit-overflow-scrolling:touch}
+  .wps-file-manager-wrap .avsora-inline-form{display:block;margin:6px 0}
+  .wps-file-manager-wrap .avsora-inline-form input[type=text]{max-width:100%;width:100%;margin-bottom:4px}
+  .wps-file-manager-wrap .button{margin-top:4px}
+}
