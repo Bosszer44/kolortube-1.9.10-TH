@@ -256,7 +256,9 @@ final class WPS_Ads {
 	public static function preload_active_images() {
 		// Priority images in this inventory belong to the single-video template.
 		// Do not preload them on archives, the home page, or a different request.
-		if ( is_admin() || ! is_singular() || ( class_exists( 'WPS_Professional_Suite' ) && ! WPS_Professional_Suite::get( 'ads_master_enabled', 1 ) ) ) {
+		// The single-video template owns its ad markup directly, so inventory
+		// images must not be preloaded on that page.
+		if ( is_admin() || ! is_singular() || is_single() || ( class_exists( 'WPS_Professional_Suite' ) && ! WPS_Professional_Suite::get( 'ads_master_enabled', 1 ) ) ) {
 			return;
 		}
 		$printed_hosts = array();

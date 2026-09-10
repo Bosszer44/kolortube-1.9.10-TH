@@ -48,22 +48,6 @@ if ( ! $wps_poster_url ) {
 $wps_poster_alt = $video_title;
 // 👍 ตรวจสอบว่าแสดงปุ่ม Like หรือไม่
 $wps_show_likes = ! class_exists( 'WPS_Theme_Finalizer' ) || WPS_Theme_Finalizer::single_show_likes();
-// 📢 โหลดตำแหน่งโฆษณาของธีม
-$ads = array(
-	'in_player_1'              => WPS_Ads::html( 'ads_single_video_page_in_player_1' ),
-	'in_player_2'              => WPS_Ads::html( 'ads_single_video_page_in_player_2' ),
-	'under_player'              => WPS_Ads::html( 'ads_single_video_page_under_player' ),
-	'before_related_videos_ads' => WPS_Ads::html( 'ads_single_video_page_before_related_videos' ),
-	'beside_player_1'           => WPS_Ads::html( 'ads_single_video_page_beside_player_1' ),
-	'beside_player_2'           => WPS_Ads::html( 'ads_single_video_page_beside_player_2' ),
-	'static_top'                => WPS_Ads::html( 'ads_single_static_top' ),
-	'static_bottom_1'           => WPS_Ads::html( 'ads_single_static_bottom_1' ),
-	'static_bottom_2'           => WPS_Ads::html( 'ads_single_static_bottom_2' ),
-	'static_bottom_3'           => WPS_Ads::html( 'ads_single_static_bottom_3' ),
-	'static_bottom_4'           => WPS_Ads::html( 'ads_single_static_bottom_4' ),
-);
-$has_wpst_in_player_ad = '' !== trim( $ads['in_player_1'] . $ads['in_player_2'] );
-$has_wpst_beside_player_ad_zone_desktop = '' !== trim( $ads['beside_player_1'] . $ads['beside_player_2'] );
 // 🏷️ ดึงหมวดหมู่แรก สำหรับ "รหัสอ้างอิง"
 $post_categories = get_the_category();
 $reference_code  = '';
@@ -102,47 +86,12 @@ if ( is_array( $gallery_ids ) && ! empty( $gallery_ids ) ) {
 	<section class="single-video-player">
 		<div class="container">
 			<div class="row">
-				<?php if ( $has_wpst_beside_player_ad_zone_desktop ) : ?>
-					<div class="col-12 col-md-9 wps-player-column">
-						<div class="wps-player-stage">
-							<?php get_template_part( 'loop-templates/content', 'video-player' ); ?>
-							<?php if ( $has_wpst_in_player_ad ) : ?>
-								<div class="happy-inside-player" role="complementary" aria-label="<?php esc_attr_e( 'Advertisement', 'wpst' ); ?>">
-									<?php if ( $ads['in_player_1'] ) : ?><div class="zone-1"><?php echo $ads['in_player_1']; ?></div><?php endif; ?>
-									<?php if ( $ads['in_player_2'] ) : ?><div class="zone-2"><?php echo $ads['in_player_2']; ?></div><?php endif; ?>
-									<button type="button" class="close-text" aria-label="<?php esc_attr_e( 'Close advertisement', 'wpst' ); ?>">×</button>
-								</div>
-							<?php endif; ?>
-						</div>
-						<?php if ( $ads['under_player'] ) : ?>
-							<div class="happy-player-under wps-player-width-banner">
-								<?php echo $ads['under_player']; ?>
-							</div>
-						<?php endif; ?>
-					</div>
-					<div class="col-12 col-md-3 happy-player-beside">
-						<div class="zone-1"><?php echo $ads['beside_player_1']; ?></div>
-						<div class="zone-2"><?php echo $ads['beside_player_2']; ?></div>
-					</div>
-				<?php else : ?>
 					<div class="col-12 col-md-10 mx-auto wps-player-column">
 						<a href="https://westbluez.club/register/p8274/" target="_blank" rel="nofollow">
 							<img loading="lazy" style="border:0" src="//avyoufin.com/wp-content/uploads/2026/05/wespro01.gif" width="100%" height="180" alt="">
 						</a>
-						<?php if ( $ads['static_top'] ) : ?>
-							<div class="wps-single-static-ad wps-player-width-banner">
-								<?php echo $ads['static_top']; ?>
-							</div>
-						<?php endif; ?>
 						<div class="wps-player-stage">
 							<?php get_template_part( 'loop-templates/content', 'video-player' ); ?>
-							<?php if ( $has_wpst_in_player_ad ) : ?>
-								<div class="happy-inside-player" role="complementary" aria-label="<?php esc_attr_e( 'Advertisement', 'wpst' ); ?>">
-									<?php if ( $ads['in_player_1'] ) : ?><div class="zone-1"><?php echo $ads['in_player_1']; ?></div><?php endif; ?>
-									<?php if ( $ads['in_player_2'] ) : ?><div class="zone-2"><?php echo $ads['in_player_2']; ?></div><?php endif; ?>
-									<button type="button" class="close-text" aria-label="<?php esc_attr_e( 'Close advertisement', 'wpst' ); ?>">×</button>
-								</div>
-							<?php endif; ?>
 						</div>
 						<a href="https://orll.cc/kwp8239/" target="_blank" rel="nofollow">
 							<img loading="lazy" style="border:0" src="//avyoufin.com/wp-content/uploads/2026/05/kpro01.gif" width="100%" height="180" alt="">
@@ -153,39 +102,12 @@ if ( is_array( $gallery_ids ) && ! empty( $gallery_ids ) ) {
 						<a href="https://t.me/+qBmOvw5RP55iYjdl" target="_blank" rel="nofollow">
 							<img loading="lazy" style="border:0" src="//avyoufin.com/wp-content/uploads/2026/06/JAV-ซับไทย-HD.gif" width="100%" height="180" alt="">
 						</a>
-						<?php if ( $ads['under_player'] ) : ?>
-							<div class="happy-player-under wps-player-width-banner">
-								<?php echo $ads['under_player']; ?>
-							</div>
-						<?php endif; ?>
-						<?php if ( $ads['static_bottom_1'] ) : ?>
-							<div class="wps-single-static-ad wps-player-width-banner">
-								<?php echo $ads['static_bottom_1']; ?>
-							</div>
-						<?php endif; ?>
-						<?php if ( $ads['static_bottom_2'] ) : ?>
-							<div class="wps-single-static-ad wps-player-width-banner">
-								<?php echo $ads['static_bottom_2']; ?>
-							</div>
-						<?php endif; ?>
-						<?php if ( $ads['static_bottom_3'] ) : ?>
-							<div class="wps-single-static-ad wps-player-width-banner">
-								<?php echo $ads['static_bottom_3']; ?>
-							</div>
-						<?php endif; ?>
-						<?php if ( $ads['static_bottom_4'] ) : ?>
-							<div class="wps-single-static-ad wps-player-width-banner">
-								<?php echo $ads['static_bottom_4']; ?>
-							</div>
-						<?php endif; ?>
 					</div>
-				<?php endif; ?>
 			</div>
 		</div>
 	</section>
 	<div class="wps-single-floating-ad-scope" data-wps-single-floating-ads>
-		<?php echo WPS_Ads::floating_html(); ?>
-		
+		<!-- Floating promotions below are maintained directly in this template. -->
 		<div id="floating-widget">
 			<div class="promo-unit promo-left">
 				<button class="widget-close" data-close="floating-widget">
@@ -739,8 +661,3 @@ if ( is_array( $gallery_ids ) && ! empty( $gallery_ids ) ) {
 			</div>
 		</div>
 	</section>
-	<?php if ( $ads['before_related_videos_ads'] ) : ?>
-		<div class="happy-section">
-			<?php echo $ads['before_related_videos_ads']; ?>
-		</div>
-	<?php endif; ?>
